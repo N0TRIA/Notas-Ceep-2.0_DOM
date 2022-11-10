@@ -1,4 +1,4 @@
-const BotaoConclui = () => { 
+export const BotaoConclui = () => { 
     const botaoConclui = document.createElement('button')  
     
     botaoConclui.classList.add('check-button')
@@ -18,5 +18,4 @@ const concluirTarefa = (evento) => {
     tarefaCompleta.classList.toggle('done')
 }
 
-export default BotaoConclui
 
