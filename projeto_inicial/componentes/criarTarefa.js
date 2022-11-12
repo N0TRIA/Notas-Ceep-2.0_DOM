@@ -1,3 +1,4 @@
+import { carregaTarefa } from './carregaTarefa.js'
 import { BotaoConclui } from './concluiTarefa.js'
 import { BotaoDeleta } from './deletaTarefa.js'
 
@@ -20,15 +21,16 @@ export const handleNovoItem = (evento) => {
 
     const tarefasAtualizadas = [... tarefas, dados];
 
-    const criaTarefa = criarTarefa(dados);
+    const criaTarefa = Tarefa(dados);
 
     localStorage.setItem('tarefas', JSON.stringify(tarefasAtualizadas));
 
-    lista.appendChild(criaTarefa);
     input.value = " ";
+
+    carregaTarefa();
 }
 
-export const criarTarefa = ({ valor, dataFormatada }) => {
+export const Tarefa = ({ valor, dataFormatada }) => {
 
     const tarefa = document.createElement('li');
     tarefa.classList.add('task');
